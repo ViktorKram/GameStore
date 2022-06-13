@@ -60,6 +60,8 @@ namespace GameStore.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionHelper.Set(Session, SessionKey.RETURN_URL, Request.RawUrl);
+
             if (IsPostBack)
             {
                 int selectedGameId;
@@ -71,9 +73,8 @@ namespace GameStore.Pages
                     if (selectedGame != null)
                     {
                         SessionHelper.GetCart(Session).AddItem(selectedGame, 1);
-                        SessionHelper.Set(Session, SessionKey.RETURN_URL,
-                            Request.RawUrl);
-
+ 
+                        // Метод для автоматического перехода в корзину при добавлении товара
                         //Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "cart", null).VirtualPath);
                     }
                 }

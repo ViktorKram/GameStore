@@ -12,12 +12,17 @@ namespace GameStore.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (GetCartLines().Any())
+            {
+                emptyCartMessage.Visible = false;
+            }
+
             if (IsPostBack)
             {
                 Repository repository = new Repository();
                 int gameId;
 
-                if(int.TryParse(Request.Form["remove"], out gameId))
+                if (int.TryParse(Request.Form["remove"], out gameId))
                 {
                     Game gameToRemove = repository.Games.Where(g => g.GameId == gameId).FirstOrDefault();
 
@@ -27,7 +32,6 @@ namespace GameStore.Pages
                     }
                 }
             }
-
         }
 
         public IEnumerable<CartLine> GetCartLines()
@@ -47,10 +51,16 @@ namespace GameStore.Pages
                 return SessionHelper.Get<string>(Session, SessionKey.RETURN_URL);
             }
         }
+
         public string CheckoutUrl
         {
             get
             {
+                if (!GetCartLines().Any())
+                {
+                    return null;
+                }
+
                 return RouteTable.Routes.GetVirtualPath(null, "checkout", null).VirtualPath;
             }
         }

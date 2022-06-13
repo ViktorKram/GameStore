@@ -37,12 +37,17 @@ namespace GameStore.Models
         {
             var gameToRemove = lineCollection.Where(g => g.Game.GameId == game.GameId).FirstOrDefault();
 
-            gameToRemove.Quantity -= 1;
-
-            if (gameToRemove.Quantity == 0)
+            if (gameToRemove != null)
             {
-                lineCollection.Remove(gameToRemove);
+                gameToRemove.Quantity -= 1;
+
+                if (gameToRemove.Quantity <= 0)
+                {
+                    lineCollection.Remove(gameToRemove);
+                }
             }
+
+            // Метод для удаления всех копий товара в корзине
             //lineCollection.RemoveAll(l => l.Game.GameId == game.GameId);
         }
 

@@ -44,5 +44,9 @@
             <a href="<%= ReturnUrl %>">Продолжить покупки</a>
             <a href="<%= CheckoutUrl %>">Оформить заказ</a>
         </p>
+        <div id="emptyCartMessage" runat="server">
+            <h2></h2>
+            Ваша корзина пуста. Пожалуйста, выберите товар, чтобы перейти к оформлению заказа.   
+        </div>
     </div>
 </asp:Content>

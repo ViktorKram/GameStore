@@ -36,7 +36,7 @@ namespace GameStore.Pages
 
                     new Repository().SaveOrder(order);
                     cart.Clear();
-
+                    
                     checkoutForm.Visible = false;
                     checkoutMessage.Visible = true;
                 }
