@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace GameStore
@@ -10,6 +10,7 @@ namespace GameStore
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
         protected void Session_Start(object sender, EventArgs e)

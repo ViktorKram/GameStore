@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" 
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs"
     Inherits="GameStore.Pages.Checkout"
     MasterPageFile="~/Pages/Store.Master" %>
 
@@ -11,7 +11,7 @@
 
         <div id="errors" data-valmsg-summary="true">
             <ul>
-                <li style="display:none"></li>
+                <li style="display: none"></li>
             </ul>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
         </div>
@@ -19,25 +19,25 @@
             <h3>Заказчик</h3>
             <div>
                 <label for="name">Имя:</label>
-                <input id="name" name="name" runat="server" />
+                <input id="name" name="name" data-val="true" data-val-required="Введите имя." />
             </div>
 
             <h3>Адрес доставки</h3>
             <div>
                 <label for="line1">Адрес 1:</label>
-                <input id="line1" name="line1" runat="server" />
+                <input id="line1" name="line1" />
             </div>
             <div>
                 <label for="line2">Адрес 2:</label>
-                <input id="line2" name="line2" runat="server" />
+                <input id="line2" name="line2" />
             </div>
             <div>
                 <label for="line3">Адрес 3:</label>
-                <input id="line3" name="line3" runat="server" />
+                <input id="line3" name="line3" />
             </div>
             <div>
                 <label for="city">Город:</label>
-                <input id="city" name="city" runat="server" />
+                <input id="city" name="city" />
             </div>
 
             <h3>Детали заказа</h3>

@@ -8,34 +8,30 @@ div#header div.title, div.item h3, div.item h4, div.pager a {
 }
 
 div#header {
-    background-color: #ffd800;
+    background-color: #444;
     border-bottom: 2px solid #111;
-    color: black;
-    text-align: center;
+    color: white;
 }
 
     div#header div.title {
-        font-size: 3em;
+        font-size: 2em;
         padding: .6em;
     }
 
 div#content {
-    background-color: #cfdc78 border-left: 2px solid gray;
+    border-left: 2px solid gray;
     margin-left: 9em;
     padding: 1em;
 }
 
 div#categories {
-    background-color: #cfdc78;
     float: left;
     width: 8em;
     padding: .3em;
 }
 
 div.item {
-    background-color: #cfdc78;
     border-top: 1px dotted gray;
-    border-block-color: black;
     padding-top: .7em;
     margin-bottom: .7em;
 }
@@ -74,7 +70,7 @@ div.pager {
         }
 
         div.pager a.selected {
-            background-color: #353535;
+            background-color: #444;
             color: white;
         }
 
@@ -95,7 +91,7 @@ div#categories a {
 }
 
     div#categories a.selected {
-        background-color: #666;
+        background-color: #444;
         color: White;
     }
 

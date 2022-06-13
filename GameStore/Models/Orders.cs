@@ -7,10 +7,10 @@ namespace GameStore.Models
     {
         public int OrderId { get; set; }
 
-        [Required(ErrorMessage = "Пожалуйста, введите свое имя.")]
+        //[Required(ErrorMessage = "Пожалуйста, введите свое имя.")]
         public string Name { get; set; }
 
-       // [Required(ErrorMessage = "Вы должны указать хотя бы один адрес доставки")]
+        [Required(ErrorMessage = "Вы должны указать хотя бы один адрес доставки")]
         public string Line1 { get; set; }
         public string Line2 { get; set; }
         public string Line3 { get; set; }
